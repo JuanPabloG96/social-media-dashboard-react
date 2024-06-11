@@ -6,6 +6,7 @@ export function App() {
     <>
       <section className="mx-auto my-4 w-[100%] max-w-[750px] flex flex-col gap-10 items-center">
         <MediaCard
+          id={1}
           title={"FOLLOWERS"}
           socialMediaName={"facebook"}
           imageUrl={"images/icon-facebook.svg"}

@@ -1,6 +1,6 @@
-export function MediaCard({ title, socialMediaName, imageUrl, username, count, status, statusIcon }) {
+export function MediaCard({ id, title, socialMediaName, imageUrl, username, count, status, statusIcon }) {
   return (
-    <article className={`flex flex-col w-full max-w-[280px] overflow-hidden rounded-[4px] bg-darkDesaturatedBlue text-whiteText font-Inter`} >
+    <article className={`flex flex-col w-full max-w-[280px] overflow-hidden rounded-[4px] bg-darkDesaturatedBlue text-whiteText font-Inter`} key={id} >
       <div className={`w-full h-1 bg-${socialMediaName}`}></div>
       <div className="flex flex-col justify-center items-center gap-5 p-5">
         <div className="flex items-center justify-center gap-2">
