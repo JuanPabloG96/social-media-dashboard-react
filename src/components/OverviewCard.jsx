@@ -4,7 +4,7 @@ export function OverviewCard({ data, theme }) {
   return (
     <article className={`p-5 rounded-[4px] w-full flex flex-col justify-between gap-5 cursor-pointer ${theme["cardBackground"]} ${theme["textWhiteBlack"]} ${theme["cardHover"]}`} >
       <div className="flex justify-between items-start">
-        <h4 className="text-desaturatedBlueText">{data.title}</h4>
+        <h3 className="text-desaturatedBlueText">{data.title}</h3>
         <img src={data.socialMediaIcon} alt={data.socialMediaName + " icon"} />
       </div>
 
