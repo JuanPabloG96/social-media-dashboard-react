@@ -13,9 +13,7 @@ export default {
         twitter: 'hsl(203, 89%, 53%)',
         youtube: 'hsl(348, 97%, 39%)',
 
-        // Dark Theme
-        toggleDark: 'linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%))',
-        // Light Theme
+        // Dark Mode Switch
         toggleLight: 'hsl(230, 22%, 74%)',
 
         // Neutral - Dark Theme
@@ -33,12 +31,19 @@ export default {
       },
       backgroundImage: {
         instagram: 'linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%))',
+        toggleDark: 'linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%))',
       },
       fontFamily: {
         inter: ['Inter', 'san-serif']
       }
     },
   },
+  safelist: [
+    'bg-facebook', 'bg-twitter',
+    'bg-instagram', 'bg-youtube',
+    'text-lime', 'text-red',
+    'font-Inter'
+  ],
   plugins: [],
 };
 
