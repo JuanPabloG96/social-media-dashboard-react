@@ -20,6 +20,7 @@ export default {
         veryDarkBlue: 'hsl(230, 17%, 14%)',
         veryDarkBluePattern: 'hsl(232, 19%, 15%)',
         darkDesaturatedBlue: 'hsl(228, 28%, 20%)',
+        darkDesaturatedBlueHover: 'hsl(228, 28%, 25%)',
         desaturatedBlueText: 'hsl(228, 34%, 66%)',
         whiteText: 'hsl(0, 0%, 100%)',
         // Neutral - Light Theme
