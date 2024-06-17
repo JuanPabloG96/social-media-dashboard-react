@@ -9,20 +9,23 @@ export function App() {
   const data = useFetch(URL)
   const [lightTheme, setLightTheme] = useState(false)
 
-  const appBackground = lightTheme ? "bg-WhiteBg" : "bg-veryDarkBlue"
-  const textWhiteBlack = lightTheme ? "text-veryDarkBlueText" : "text-whiteText"
-  const cardBackground = lightTheme ? "bg-lightGrayishBlue" : "bg-darkDesaturatedBlue"
+  const theme = {
+    appBackground: lightTheme ? "bg-WhiteBg" : "bg-veryDarkBlue md:bg-veryDarkBluePattern",
+    textWhiteBlack: lightTheme ? "text-veryDarkBlueText" : "text-whiteText",
+    cardBackground: lightTheme ? "bg-veryPaleBlue" : "bg-darkDesaturatedBlue",
+    cardHover: lightTheme ? "hover:bg-lightGrayishBlue" : "hover:bg-darkDesaturatedBlueHover"
+  }
 
   return (
     <>
-      <article className={"px-48 py-9 w-[100%] flex flex-col gap-10 items-center " + appBackground}>
-        <header className="w-full font-bold">
+      <article className={"xl:px-48 lg:px-20 px-5 py-9 w-[100%] flex flex-col gap-10 items-center " + theme["appBackground"]}>
+        <header className="w-full font-bold md:flex md:justify-between md:items-center">
           <div>
-            <h1 className={"text-2xl " + textWhiteBlack}>Social Media Dashboard</h1>
+            <h1 className={"text-2xl " + theme["textWhiteBlack"]}>Social Media Dashboard</h1>
             <span>Total Followers: 23,004</span>
           </div>
-          <hr className="my-3 bg-desaturatedBlueText h-[1px] border-none" />
-          <div className="flex justify-between items-center">
+          <hr className="my-3 bg-desaturatedBlueText h-[1px] border-none md:hidden" />
+          <div className="flex justify-between items-center md:gap-4">
             <span>Dark Mode</span>
             <Switcher lightTheme={lightTheme} setLightTheme={setLightTheme} />
           </div>
@@ -31,36 +34,21 @@ export function App() {
         <section className="w-full grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-4">
           {data?.mediaData.map((data) => (
             <MediaCard
-              id={data.id}
-              title={data.title}
-              socialMediaName={data.socialMediaName}
-              socialMediaIcon={data.socialMediaIcon}
-              username={data.username}
-              count={data.count}
-              status={data.status}
-              statusNumber={data.statusNumber}
-              statusIcon={data.statusIcon}
-              cardBackground={cardBackground}
-              textWhiteBlack={textWhiteBlack}
+              key={data.id}
+              data={data}
+              theme={theme}
             />
           ))}
         </section>
 
         <section className="w-full flex flex-col gap-5">
-          <h2 className={"text-2xl font-bold " + textWhiteBlack}>Overview - Today</h2>
+          <h2 className={"text-2xl font-bold " + theme["textWhiteBlack"]}>Overview - Today</h2>
           <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-4">
             {data?.overviewData.map((data) => (
               <OverviewCard
-                id={data.id}
-                title={data.title}
-                socialMediaName={data.socialMediaName}
-                socialMediaIcon={data.socialMediaIcon}
-                count={data.count}
-                status={data.status}
-                statusNumber={data.statusNumber}
-                statusIcon={data.statusIcon}
-                cardBackground={cardBackground}
-                textWhiteBlack={textWhiteBlack}
+                key={data.id}
+                data={data}
+                theme={theme}
               />
             ))}
           </div>

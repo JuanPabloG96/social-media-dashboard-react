@@ -20,6 +20,7 @@ export const Switcher = ({ lightTheme, setLightTheme }) => {
           checked={isChecked}
           onChange={handleCheckboxChange}
           className='sr-only'
+          id='checkbox'
         />
         <div className={`block h-6 w-12 rounded-full transition-colors duration-500 ${switchBgClass}`}></div>
         <div
