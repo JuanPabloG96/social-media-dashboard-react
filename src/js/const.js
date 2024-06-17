@@ -3,4 +3,4 @@ export const statusColor = {
   "green": "text-lime",
 }
 
-export const URL = '../src/json/data.json'
+export const URL = 'json/data.json'
